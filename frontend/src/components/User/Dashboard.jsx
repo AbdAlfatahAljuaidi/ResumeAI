@@ -57,18 +57,25 @@ const params = useParams()
 
   },[])
 
+  
   const logout = async () => {
     try {
-      const {data} = await axios.post(`${apiUrl}/logout`,{credentials: 'include'})
-      if(data.error == false){
-        navigate("/login")
+      const { data } = await axios.post(
+        `${apiUrl}/logout`,
+        {},   // body فارغ
+        {
+          withCredentials: true   // هذا هو المهم
+        }
+      );
+  
+      if (data.error === false) {
+        navigate("/login");
       }
     } catch (error) {
       console.log(error);
-      
     }
-  }
-
+  };
+  
 
   return (
     // تم تغيير dir إلى rtl وتغيير الخط ليكون متناسقاً مع العربية
