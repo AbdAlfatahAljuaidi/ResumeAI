@@ -144,9 +144,8 @@ exports.getResume =  async (req, res) => {
 
 exports.userData = async (req,res) => {
   try {
-    console.log("0");
+
     const token = req.cookies.token
-console.log("token222",token);
 
     if (!token) {
       return res.status(401).json({ error: true, message: "Unauthorized: No token provided" });
@@ -171,9 +170,7 @@ console.log("token222",token);
 
 exports.logout = async  (req,res) => {
   try{
-    console.log("5555555555");
     
-    console.log("الكوكيز قبل الحذف:", req.cookies);
 res.clearCookie("token",{
   httpOnly:true,
   secure:true,
@@ -189,7 +186,6 @@ return res.status(200).json({error:false})
   }
 
 }
-
 
 
 //google ai studio

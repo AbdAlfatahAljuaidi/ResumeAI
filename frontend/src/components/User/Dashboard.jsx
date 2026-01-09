@@ -59,7 +59,7 @@ const params = useParams()
 
   const logout = async () => {
     try {
-      const {data} = await axios.post(`${apiUrl}/logout`,{  withCredentials: true})
+      const {data} = await axios.post(`${apiUrl}/logout`,{credentials: 'include'})
       if(data.error == false){
         navigate("/login")
       }
