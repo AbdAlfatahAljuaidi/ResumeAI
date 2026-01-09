@@ -17,7 +17,7 @@ exports.SignUp = async (req,res) => {
 
         const checkUser = await User.findOne({email})
         if(checkUser){
-          console.log("test");
+          console.log("test for signup");
           
           return res.status(400).json({error:true,message:"البريد الالكتروني مستخدم بالفعل"})
         }
