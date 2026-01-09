@@ -144,7 +144,9 @@ const imporoveJob= async () => {
     try {
       const res = await axios.post(`${apiUrl}/api/resume`, resumeData,{withCredentials:true});
       toast.success(res.data.message)
+      console.log("test");
       navigate(`/Dashboard/${user._id}`)
+      
     } catch (err) {
       console.error(err);
       toast.error(err.response.data.message)
