@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+/* index.css */
+.background {
+    background-image: radial-gradient(125% 125% at 50% 10%, #ffffff 40%, #3B82F6 100%);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+
+
+.wrapper{
+    border: 2px solid rgba(255,255,255,.1);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0,0,0,.2);
+  }
+
