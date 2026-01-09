@@ -66,9 +66,8 @@ exports.Login = async (req,res) => {
 
     res.cookie('token',token, {
       httpOnly:true,
-      secure:false,
-      sameSite:'lax',
-      path: "/",
+      secure:true,
+      sameSite:'None',
       maxAge: 24 * 60 * 60 * 1000 // 1 يوم مثلاً
     })
 
@@ -177,9 +176,8 @@ exports.logout = async  (req,res) => {
     console.log("الكوكيز قبل الحذف:", req.cookies);
 res.clearCookie("token",{
   httpOnly:true,
-  secure:false,
-  sameSite:'lax',
-  path: "/", 
+  secure:true,
+  sameSite:'None',
 })
 
 console.log("logout");
