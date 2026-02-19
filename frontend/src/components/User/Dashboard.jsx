@@ -96,10 +96,10 @@ const params = useParams()
 
         <nav className="mt-4 flex-1">
           <NavItem icon={<FaHome />} label="الرئيسية" active />
-          <NavItem icon={<FaFileAlt />} label="سيري الذاتية" />
-          <NavItem icon={<FaThLarge />} label="النماذج" />
+          <NavItem icon={<FaFileAlt />} label="سيرتي الذاتية" />
+          {/* <NavItem icon={<FaThLarge />} label="النماذج" />
           <NavItem icon={<FaUserCog />} label="إعدادات الحساب" />
-          <NavItem icon={<FaCreditCard />} label="الاشتراك والدفع" />
+          <NavItem icon={<FaCreditCard />} label="الاشتراك والدفع" /> */}
         </nav>
       </aside>
 
