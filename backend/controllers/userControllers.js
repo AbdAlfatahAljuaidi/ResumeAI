@@ -8,19 +8,25 @@ const ai = new GoogleGenAI(process.env.GEMINI_API_KEY);
 
 exports.SignUp = async (req,res) => {
     try {
-        const {name,email,password,checkPassword} = req.body
-        if(!name || !email || !password || !checkPassword){
+        const {name,phone,password,checkPassword} = req.body
+        if(!name || !phone || !password || !checkPassword){
             console.log("كل الحقول مطلوبة");
             return res.status(400).json({error:true,message:"يرجى ادخال جمبع الحقول"})
             
         }
 
-        const checkUser = await User.findOne({email})
+        const checkUser = await User.findOne({phone})
         if(checkUser){
           console.log("test for signup");
           
-          return res.status(400).json({error:true,message:"البريد الالكتروني مستخدم بالفعل"})
+          return res.status(400).json({error:true,message:" رقم الهاتف مستخدم بالفعل"})
         }
+
+        if(password != checkPassword){
+            console.log("كلمة السر غير متطابقة");
+            return res.status(400).json({error:true,message:"كلمة السر غير متطابقة"})
+        }
+        
 
         const user = User.create(req.body)
         return res.status(200).json({error:false, message:"تم انشاء مستخدم بنجاح" })
@@ -35,12 +41,12 @@ exports.SignUp = async (req,res) => {
 
 exports.Login = async (req,res) => {
   try {
-    const {email,password} = req.body
-    if(!email || !password){
+    const {phone,password} = req.body
+    if(!phone || !password){
       console.log("كل الحقول مطلوبة");
       return res.status(400).json({error:true,message:"كل الحقول مطلوبة"})
     }
-    const user = await User.findOne({email})
+    const user = await User.findOne({phone})
 
 
     if(!user){
@@ -104,10 +110,10 @@ exports.addResume = async (req, res) => {
         });
         
   
-      res.status(201).json({ message: 'Resume saved successfully', resume: newResume });
+      res.status(201).json({ message: 'تم انشاء سيرتك الذاتية بنجاح', resume: newResume });
     } catch (err) {
       console.error(err);
-      res.status(500).json({ error: 'Failed to save resume' , message:"حدث خطأ"});
+      res.status(500).json({ error: 'حدث خطأ أثناء انشاء سيرتك الذاتية' , message:"حدث خطأ"});
     }
   };
 

@@ -16,12 +16,12 @@ const NavBar = () => {
         <div className="flex items-center gap-4">
           
           {/* Dark mode icon */}
-          <button
+          {/* <button
             className="p-2 rounded-full hover:bg-gray-100 transition"
             aria-label="Toggle dark mode"
           >
             <MdOutlineDarkMode size={22} />
-          </button>
+          </button> */}
 
           {/* Register button */}
           <Link

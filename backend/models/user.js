@@ -5,8 +5,8 @@ name:{
     type:String,
     required:true, 
 },
-email:{
-type:String,
+phone:{
+type: String,
 required:true,
 
 },
@@ -18,5 +18,6 @@ password:{
 
 })
 
-const userModel = mongoose.model("user",userSchema)
+const userModel = mongoose.model("User",userSchema)
+
 module.exports = userModel

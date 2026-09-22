@@ -8,6 +8,9 @@ import ResumeTwo from "./components/CvBuilder/Resume2"
 import Resume from "./components/CvBuilder/Resume"
 import Dashboard from "./components/User/Dashboard"
 import {ToastContainer} from 'react-toastify'
+import Layout from "./components/User/Layout"
+import EditResume from "./components/CvBuilder/EditResume"
+import AdminComplaints from "./components/admin/Admin"
 
 function App() {
 
@@ -24,7 +27,9 @@ function App() {
 <Route path='resumeThree/:userID/:resumeTitle' element={<ResumeThree />} />
 <Route path='resumeTwo/:userID/:resumeTitle' element={<ResumeTwo />} />
 <Route path='Resume/:userID/:resumeTitle' element={<Resume />} />
-<Route path='Dashboard/:id' element={<Dashboard />} />
+<Route path='Layout/:id' element={<Layout />} />
+<Route path="/CvBuilder/:userID/:resumeTitle" element={<EditResume />} />
+<Route path="/AdminComplaints" element={<AdminComplaints />} />
 
 
     </Routes>

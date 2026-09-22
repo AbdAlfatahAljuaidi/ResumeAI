@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { CgProfile } from "react-icons/cg";
-import { FaUser, FaEnvelope, FaPhone,FaMagic,FaRobot, FaMapMarkerAlt, FaGlobe, FaLinkedin, FaPen, FaGraduationCap, FaBriefcase, FaTools, FaPlus, FaCalendarAlt, FaUniversity, FaAward } from "react-icons/fa";
+import { FaUser, FaEnvelope, FaPhone,FaMagic,FaRobot, FaMapMarkerAlt, FaGlobe, FaLinkedin, FaPen, FaGraduationCap, FaBriefcase, FaTools, FaPlus, FaCalendarAlt, FaUniversity, FaAward ,FaSpinner} from "react-icons/fa";
 
 import { FcViewDetails } from "react-icons/fc";
 import axios from 'axios'
@@ -15,6 +15,7 @@ const Create = () => {
   const [user,setUser] = useState({})
   const [wait, setWait] = useState(false)
   const [waitJob, setWaitJob] = useState(false)
+  const [download, setDownload] = useState(false)
 
 
   const navigate = useNavigate()
@@ -142,14 +143,17 @@ const imporoveJob= async () => {
     };
   
     try {
+      setDownload(true)
       const res = await axios.post(`${apiUrl}/api/resume`, resumeData,{withCredentials:true});
       toast.success(res.data.message)
       console.log("test for create");
-      navigate(`/Dashboard/${user._id}`)
+      navigate(`/Layout/${user._id}`)
+      setDownload(false)
       
     } catch (err) {
       console.error(err);
       toast.error(err.response.data.message)
+      setDownload(false)
     }
   };
 
@@ -356,9 +360,21 @@ className="
       </section>
 
       <div className='flex justify-end gap-4 mt-12'>
-        <button className='bg-gray-200 text-gray-700 font-bold py-3 px-8 rounded-xl hover:bg-gray-300 transition-all'>معاينة</button>
-        <button onClick={handleSubmit} className='bg-blue-600 text-white font-bold py-3 px-12 rounded-xl shadow-lg hover:bg-blue-700 transition-all'>حفظ السيرة الذاتية</button>
-      </div>
+  <button 
+    disabled={download} 
+    onClick={handleSubmit} 
+    className={`${download ? "cursor-not-allowed opacity-50" : "cursor-pointer"} bg-blue-600 text-white font-bold py-3 px-12 rounded-xl shadow-lg hover:bg-blue-700 transition-all flex items-center justify-center gap-2`}
+  > 
+    {download ? (
+      <>
+        <FaSpinner className="animate-spin text-lg" />
+        <span>جاري الحفظ...</span>
+      </>
+    ) : (
+      "حفظ السيرة الذاتية"
+    )}
+  </button>
+</div>
 
     </div>
   );

@@ -24,7 +24,7 @@ const About = () => {
   ];
 
   return (
-    <section className="py-24 px-6 relative overflow-hidden bg-gray-50/30" dir="rtl">
+    <section className="py-24 px-6 relative overflow-hidden bg-gray-50" dir="rtl">
       {/* دوائر الخلفية الناعمة - مطابقة لروح الـ Dashboard */}
       <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-blue-50/50 rounded-full blur-[100px] -z-10"></div>
       <div className="absolute bottom-0 right-0 w-[300px] h-[300px] bg-indigo-50/50 rounded-full blur-[100px] -z-10"></div>

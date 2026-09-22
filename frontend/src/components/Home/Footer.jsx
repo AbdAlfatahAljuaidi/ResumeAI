@@ -69,7 +69,7 @@ const Footer = () => {
         {/* الخط الفاصل السفلي */}
         <div className="border-t border-gray-100 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-gray-400 text-sm font-medium">
-            &copy; 2025 سيرتي الذكية – جميع الحقوق محفوظة. صنع بكل ❤️ للمحترفين العرب.
+            &copy;  سيرتي الذكية – جميع الحقوق محفوظة. صنع بكل ❤️  .
           </p>
           <div className="flex gap-6 text-sm text-gray-400 font-medium">
             <button className="hover:text-blue-600 transition-colors">الشروط والأحكام</button>

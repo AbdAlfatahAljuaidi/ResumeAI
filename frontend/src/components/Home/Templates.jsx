@@ -24,7 +24,7 @@ const Templates = () => {
   ];
 
   return (
-    <section className="py-24 px-6 relative overflow-hidden bg-gray-50/30" dir="rtl">
+    <section className="py-24 px-6 relative overflow-hidden bg-gray-50" dir="rtl">
       {/* تأثيرات الخلفية الناعمة */}
       <div className="absolute top-0 right-1/4 w-96 h-96 bg-blue-100/40 rounded-full blur-[120px] -z-10"></div>
 
