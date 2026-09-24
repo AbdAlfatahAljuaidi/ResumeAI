@@ -172,6 +172,21 @@ const removeItem = (index, type) => {
   </div>
 ))}
 
+
+const changeEndDate = (isChecked) => {
+try{
+  console.log("Checkbox is checked:", isChecked);
+  if(isChecked==true){
+    setCurrentExp({...currentExp, endDate:"Still Working"})
+  }else{
+    setCurrentExp({...currentExp, endDate:""})
+  }
+}
+catch(error){
+  console.log(error);
+}
+}
+
   return (
     <div className='mt-32 px-4 md:px-10 max-w-6xl mx-auto mb-20' dir='rtl'>
 
@@ -200,7 +215,6 @@ const removeItem = (index, type) => {
 <input type='text' placeholder='رقم الهاتف' value={personalInfo.phoneNumber} onChange={e=>setPersonalInfo({...personalInfo, phoneNumber:e.target.value})} className='border-2 border-gray-100 rounded-xl px-4 py-2 focus:border-blue-500 w-full' />
 <input type='text' placeholder='العنوان' value={personalInfo.address} onChange={e=>setPersonalInfo({...personalInfo, address:e.target.value})} className='border-2 border-gray-100 rounded-xl px-4 py-2 focus:border-blue-500 w-full' />
 <input type='text' placeholder='رابط الموقع' value={personalInfo.website} onChange={e=>setPersonalInfo({...personalInfo, website:e.target.value})} className='border-2 border-gray-100 rounded-xl px-4 py-2 focus:border-blue-500 w-full' />
-<input type='text' placeholder='لينكد إن' value={personalInfo.linkedin} onChange={e=>setPersonalInfo({...personalInfo, linkedin:e.target.value})} className='border-2 border-gray-100 rounded-xl px-4 py-2 focus:border-blue-500 w-full' />
 </div>
 <button
 onClick={()=>imporveSummary()}
@@ -264,7 +278,14 @@ className="
             <input type='date' placeholder='تاريخ البدء' value={currentExp.startDate} onChange={e=>setCurrentExp({...currentExp, startDate:e.target.value})} className='border-2 border-gray-100 rounded-xl px-4 py-2 focus:border-blue-500 w-full' />
             <input type='text' placeholder='تاريخ الانتهاء' value={currentExp.endDate} onChange={e=>setCurrentExp({...currentExp, endDate:e.target.value})} className='border-2 border-gray-100 rounded-xl px-4 py-2 focus:border-blue-500 w-full' />
             <div className='flex items-center gap-2'>
-              <input type='checkbox' checked={currentExp.stillWorking} onChange={e=>setCurrentExp({...currentExp, stillWorking:e.target.checked})} className='w-4 h-4 accent-blue-600' />
+            <input 
+  type='checkbox' 
+  onChange={(e) => {
+    const isChecked = e.target.checked;
+    changeEndDate(isChecked);
+  }} 
+  className='w-4 h-4 accent-blue-600' 
+/>
               <label>أعمل هنا حالياً</label>
             </div>
           </div>

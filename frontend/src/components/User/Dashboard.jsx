@@ -90,7 +90,7 @@ if(!deleteConfirmation) {
       {/* Main Content */}
       <main className="flex-1 p-8 ">
         {/* Header */}
-        <header className="flex justify-between items-center mb-10">
+        <header className=" justify-between items-center mb-10 md:flex hidden">
           <div className="relative w-1/3">
             <FaSearch className="absolute right-3 top-3 text-gray-400" />
             <input
@@ -116,7 +116,7 @@ if(!deleteConfirmation) {
         </header>
 
         {/* Welcome Section */}
-        <section className="mb-8">
+        <section className="my-16">
           <h1 className="text-3xl font-extrabold text-gray-900">أهلاً بك مجدداً، {user.name}</h1>
           <p className="text-gray-500 mt-1">هل أنت مستعد للحصول على وظيفة أحلامك اليوم؟</p>
         </section>

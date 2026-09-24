@@ -104,12 +104,7 @@ const Resume = ({ userId, resumeTitle }) => {
                   {data.personalInfo.address}
                 </div>
               )}
-              {data.personalInfo.linkedin && (
-                <div className={`flex items-center gap-3 ${isRtl ? '' : 'flex-row-reverse'}`}>
-                  <span className="bg-slate-700 p-1.5 rounded"><FaLinkedin className="text-blue-300" /></span> 
-                  <span className="text-[10px] break-all">LinkedIn</span>
-                </div>
-              )}
+           
             </div>
           </section>
   

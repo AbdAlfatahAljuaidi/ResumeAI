@@ -89,7 +89,7 @@ const Resume = () => {
             </div>
 
             <div className={`flex flex-wrap justify-center gap-6 text-sm text-blue-600 mt-2 ${isRtl ? 'flex-row-reverse' : 'flex-row'}`}>
-              {data.personalInfo.linkedin && <span className="flex items-center gap-2"><FaLinkedin />{data.personalInfo.linkedin}</span>}
+          
               {data.personalInfo.website && <span className="flex items-center gap-2"><FaGlobe />{data.personalInfo.website}</span>}
             </div>
           </header>

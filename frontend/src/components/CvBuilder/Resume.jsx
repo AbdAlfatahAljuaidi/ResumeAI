@@ -85,7 +85,6 @@ const Resume = ({ userId, resumeTitle }) => {
               {data.personalInfo.address && <span className={`flex items-center gap-1 ${isRtl ? '' : 'flex-row-reverse'}`}><FaMapMarkerAlt size={14} /> {data.personalInfo.address}</span>}
             </div>
             <div className={`flex flex-wrap justify-center gap-4 text-sm text-gray-600 mt-2 ${isRtl ? '' : 'flex-row-reverse'}`}>
-              {data.personalInfo.linkedin && <span className={`flex items-center gap-1 ${isRtl ? '' : 'flex-row-reverse'}`}><FaLinkedin size={14} /> {data.personalInfo.linkedin}</span>}
               {data.personalInfo.website && <span className={`flex items-center gap-1 ${isRtl ? '' : 'flex-row-reverse'}`}><FaGlobe size={14} /> {data.personalInfo.website}</span>}
             </div>
           </header>
